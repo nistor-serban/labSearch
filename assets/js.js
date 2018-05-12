@@ -24,14 +24,15 @@ fetch('./db/masini.json')
         // console.log(event.target.value)
         let term = event.target.value.toLowerCase();
         let items = document.getElementsByTagName('li')
-        // console.log(items)
+        console.log(items +' blabla '+ term)
         Array.from(items).forEach(function(item) {
-            console.log(item);
-            let nameOfItem = item.firstElementChild.textContent;
-        if(nameOfItem.toLowerCase().indexOf(term) = -1){
-            item.style.display='none';
-        } else{
+            // console.log('din foreach ' + item);
+            let nameOfItem = item.innerHTML;
+            // console.log(nameOfItem +'adica nume')
+        if(nameOfItem.toLowerCase().indexOf(term) != -1){
             item.style.display='block';
+        } else{
+            item.style.display='none';
         }
         })
         
